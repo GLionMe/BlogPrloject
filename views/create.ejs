@@ -36,7 +36,15 @@
                                 
                                 <div class="form-floating">
                                     <textarea class="form-control" id="body" name="body" placeholder="Enter your message here..." style="height: 12rem"></textarea>
-                                    <label for="body">Description</label>
+                                    <label for="body"></label>
+
+                                    <script>
+                                        $('#body').summernote({
+                                        placeholder: 'Description',
+                                        tabsize: 2,
+                                        height: 200
+                                        });
+                                    </script>
                                 </div>
 
                                 <div class="form-floating">

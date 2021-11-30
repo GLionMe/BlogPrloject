@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const BlogPost = require('./model/BlogPost');
+const bcrypt = require('bcrypt');
 
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
 
@@ -33,3 +34,14 @@ BlogPost.findByIdAndUpdate(id, {title: "This is written by Gaurav Kumar"}, (erro
 BlogPost.findByIdAndDelete(id, (error, blogpost) => {
     console.log(error, blogpost);
 })
+
+bcrypt.hash('123', 10, (error, hash) => {
+    console.log(hash);
+});
+
+bcrypt.hash('123', 10, (error, hash) => {
+    if(error)
+        console.log(error);
+    
+    console.log(hash);
+});

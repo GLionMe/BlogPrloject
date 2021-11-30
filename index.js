@@ -10,6 +10,10 @@ const homeController = require('./controller/home');
 const aboutController = require('./controller/about');
 const getPostController = require('./controller/getPost');
 const storePostController = require('./controller/storePost');
+const newUserController = require('./controller/newUser');
+const storeUserController = require('./controller/storeUser');
+const loginController = require('./controller/login');
+const loginUserController = require('./controller/loginUser');
 
 //connect to mongodb database
 mongoose.connect('mongodb://localhost/test', {useNewUrlParser: true});
@@ -38,3 +42,11 @@ app.get('/contact', contactController);
 app.get('/posts/new', newPostController);
 
 app.post('/posts/store', storePostController);
+
+app.get('/auth/register', newUserController);
+
+app.post('/users/register', storeUserController);
+
+app.get('/auth/login', loginController);
+
+app.post('/users/login', loginUserController);
